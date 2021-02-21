@@ -1,0 +1,6 @@
+<h1>Courses</h1>
+<ul>
+<% @courses.each do |course| %>
+    <li><%= "#{course.name}: #{course.students.student_count}" %>
+<% end %>
+</ul>
