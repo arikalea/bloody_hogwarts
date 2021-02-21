@@ -16,6 +16,7 @@ RSpec.describe Student, type: :model do
   before :each do
     @student_1 = Student.create!(name: "Casseopia Black", age: 14, house: "Slytherin")
     @student_2 = Student.create!(name: "AJ Dorion", age: 44, house: "Ravenclaw")
+    @studen_3 = Student.create!(name: 'Harry Potter', age: 17, house: 'Gryfindor')
     # @students = [@student_1, @student_2]
     @course_1 = Course.create!(name: "Defense against the Dark Arts")
     @course_2 = Course.create!(name: "Herbology")
@@ -29,7 +30,11 @@ RSpec.describe Student, type: :model do
 
   describe 'methods' do
     it 'counts number of students' do
-      expect(Student.student_count).to eq(2)
+      expect(Student.student_count).to eq(3)
+    end
+
+    it 'averages all students age' do
+      expect(Student.average_age).to eq(25)
     end
   end
 end
