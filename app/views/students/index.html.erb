@@ -1,0 +1,9 @@
+<h1>Students</h1>
+<%= link_to 'New Student', '/students/new' %>
+<% @students.each do |student| %>
+  <section id="student-<%=student.id%>">
+    <h2><%= link_to "#{student.name}", "students/#{student.id}" %></h2>
+    <p>Age: <%= student.age %>
+    <p>House: <%= student.house %>
+  </section>
+<% end %>

@@ -13,4 +13,5 @@ RSpec.describe Student, type: :model do
     it {should have_many(:courses).through(:student_courses)}
   end
 
+  
 end
